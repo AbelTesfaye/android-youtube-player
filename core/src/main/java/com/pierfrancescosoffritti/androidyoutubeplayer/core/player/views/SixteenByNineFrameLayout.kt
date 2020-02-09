@@ -2,6 +2,7 @@ package com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
@@ -22,5 +23,10 @@ open class SixteenByNineFrameLayout: FrameLayout {
             super.onMeasure(widthMeasureSpec, sixteenNineHeight)
         } else
             super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+    }
+
+    override fun onInterceptTouchEvent(ev: MotionEvent): Boolean {
+        onTouchEvent(ev)
+        return false
     }
 }
